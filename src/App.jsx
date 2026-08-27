@@ -6,6 +6,9 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import LoadingScreen from "./components/LoadingScreen"
 import PageTransition from "./components/PageTransition"
+import ScrollToTop from "./components/ScrollToTop"
+import WhatsAppButton from "./components/WhatsAppButton"
+import BackToTop from "./components/BackToTop"
 
 import Home from "./pages/Home"
 import AboutPage from "./pages/AboutPage"
@@ -128,6 +131,13 @@ function App() {
   return (
     <BrowserRouter>
 
+      {/* ================= SCROLL TO TOP ON ROUTE CHANGE ================= */}
+
+      <ScrollToTop />
+
+
+      {/* ================= LOADING SCREEN ================= */}
+
       {loading ? (
         <LoadingScreen />
       ) : (
@@ -142,8 +152,12 @@ function App() {
 
           <Footer />
 
-        </div>
+          {/* ================= UNIVERSAL FLOATING BUTTONS ================= */}
 
+          <WhatsAppButton />
+          <BackToTop />
+
+        </div>
       )}
 
     </BrowserRouter>
