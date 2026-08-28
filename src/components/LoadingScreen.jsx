@@ -38,7 +38,6 @@ function LoadingScreen() {
         className="absolute h-[22rem] w-[22rem] rounded-full bg-amber-400/10 blur-3xl"
       />
 
-
       {/* ================= MAIN CONTENT ================= */}
 
       <div className="relative flex w-full max-w-lg flex-col items-center px-8">
@@ -46,15 +45,14 @@ function LoadingScreen() {
         {/* ================= LARGE LOGO ================= */}
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.65 }}
+          initial={{ opacity: 1, scale: 0.9 }}
           animate={{
             opacity: 1,
-            scale: [0.95, 1.05, 1],
+            scale: [0.9, 1.03, 1],
           }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             ease: "easeOut",
-            times: [0, 0.65, 1],
           }}
           className="flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80"
         >
@@ -64,7 +62,6 @@ function LoadingScreen() {
             className="h-full w-full scale-110 object-contain drop-shadow-[0_0_45px_rgba(245,158,11,0.3)]"
           />
         </motion.div>
-
 
         {/* ================= BRAND ================= */}
 
@@ -87,7 +84,6 @@ function LoadingScreen() {
           </p>
         </motion.div>
 
-
         {/* ================= LOADING LINE ================= */}
 
         <div className="mt-14 h-px w-full max-w-md overflow-hidden bg-stone-800">
@@ -101,7 +97,6 @@ function LoadingScreen() {
             className="h-full w-full bg-amber-500"
           />
         </div>
-
 
         {/* ================= LOADING TEXT ================= */}
 
