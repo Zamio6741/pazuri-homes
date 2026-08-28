@@ -1,5 +1,7 @@
 import { motion } from "motion/react"
 
+import logo from "../assets/logo/pazuri-logo.png"
+
 function LoadingScreen() {
   return (
     <motion.div
@@ -8,50 +10,87 @@ function LoadingScreen() {
       transition={{ duration: 0.7, ease: "easeInOut" }}
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-stone-950"
     >
-      {/* Background glow */}
+      {/* ================= BACKGROUND GLOW ================= */}
+
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.15, 0.25, 0.15],
+          scale: [1, 1.25, 1],
+          opacity: [0.12, 0.3, 0.12],
         }}
         transition={{
-          duration: 3,
+          duration: 3.5,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute h-96 w-96 rounded-full bg-amber-600/20 blur-3xl"
+        className="absolute h-[30rem] w-[30rem] rounded-full bg-amber-600/20 blur-3xl"
       />
 
-      <div className="relative flex w-full max-w-sm flex-col items-center px-8">
+      <motion.div
+        animate={{
+          scale: [1.1, 1, 1.1],
+          opacity: [0.08, 0.2, 0.08],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute h-[22rem] w-[22rem] rounded-full bg-amber-400/10 blur-3xl"
+      />
 
-        {/* Logo */}
+
+      {/* ================= MAIN CONTENT ================= */}
+
+      <div className="relative flex w-full max-w-lg flex-col items-center px-8">
+
+        {/* ================= LARGE LOGO ================= */}
+
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="flex h-20 w-20 items-center justify-center rounded-full border border-amber-500/40 bg-amber-600 text-3xl font-bold text-white shadow-2xl shadow-amber-900/30"
+          initial={{ opacity: 0, scale: 0.65 }}
+          animate={{
+            opacity: 1,
+            scale: [0.95, 1.05, 1],
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+            times: [0, 0.65, 1],
+          }}
+          className="flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80"
         >
-          P
+          <img
+            src={logo}
+            alt="Pazuri Homes"
+            className="h-full w-full scale-110 object-contain drop-shadow-[0_0_45px_rgba(245,158,11,0.3)]"
+          />
         </motion.div>
 
-        {/* Brand */}
+
+        {/* ================= BRAND ================= */}
+
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.35,
+            ease: "easeOut",
+          }}
           className="mt-6 text-center"
         >
-          <h1 className="text-2xl font-bold tracking-[0.2em] text-white">
+          <h1 className="text-3xl font-bold tracking-[0.25em] text-white sm:text-4xl">
             PAZURI
           </h1>
 
-          <p className="mt-1 text-[10px] uppercase tracking-[0.45em] text-amber-500">
+          <p className="mt-2 text-xs uppercase tracking-[0.55em] text-amber-500 sm:text-sm">
             Homes
           </p>
         </motion.div>
 
-        {/* Loading line */}
-        <div className="mt-12 h-px w-full overflow-hidden bg-stone-800">
+
+        {/* ================= LOADING LINE ================= */}
+
+        <div className="mt-14 h-px w-full max-w-md overflow-hidden bg-stone-800">
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "0%" }}
@@ -63,7 +102,9 @@ function LoadingScreen() {
           />
         </div>
 
-        {/* Loading text */}
+
+        {/* ================= LOADING TEXT ================= */}
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: [0.4, 1, 0.4] }}
@@ -72,7 +113,7 @@ function LoadingScreen() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="mt-5 text-xs uppercase tracking-[0.3em] text-stone-500"
+          className="mt-6 text-xs uppercase tracking-[0.35em] text-stone-500"
         >
           Crafting your experience
         </motion.p>

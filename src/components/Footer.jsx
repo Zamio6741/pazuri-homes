@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 
+import logo from "../assets/logo/pazuri-logo.png"
+
 function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-amber-900/30 bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950/40 px-6 py-12 sm:px-10 lg:px-16">
+    <footer className="relative overflow-hidden border-t border-amber-900/30 bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950/40 px-6 py-14 sm:px-10 lg:px-16">
 
       {/* Subtle gradient glow */}
       <div className="pointer-events-none absolute -left-32 -top-32 h-72 w-72 rounded-full bg-amber-600/10 blur-3xl" />
@@ -11,26 +13,45 @@ function Footer() {
 
       <div className="relative mx-auto max-w-7xl">
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-          {/* Brand */}
+          {/* ================= BRAND ================= */}
           <div className="lg:col-span-2">
+
             <Link
               to="/"
-              className="inline-block"
+              className="inline-flex items-center gap-7"
             >
-              <h2 className="text-2xl font-semibold text-white">
-                Pazuri <span className="text-amber-400">Homes</span>
-              </h2>
+              {/* VERY LARGE LOGO */}
+              <div className="flex h-36 w-36 shrink-0 items-center justify-center">
+                <img
+                  src={logo}
+                  alt="Pazuri Homes"
+                  className="h-full w-full scale-110 object-contain drop-shadow-2xl"
+                />
+              </div>
+
+              {/* Brand Name */}
+              <div>
+                <h2 className="text-4xl font-semibold text-white">
+                  Pazuri <span className="text-amber-400">Homes</span>
+                </h2>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.3em] text-amber-500">
+                  Crafted for your space
+                </p>
+              </div>
             </Link>
 
-            <p className="mt-4 max-w-md leading-7 text-stone-400">
+            <p className="mt-7 max-w-md text-base leading-7 text-stone-400">
               Custom furniture crafted to make your space beautiful,
               functional and uniquely yours.
             </p>
+
           </div>
 
-          {/* Navigation */}
+
+          {/* ================= NAVIGATION ================= */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Explore
@@ -69,7 +90,8 @@ function Footer() {
             </div>
           </div>
 
-          {/* Contact */}
+
+          {/* ================= CONTACT ================= */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Get In Touch
@@ -89,7 +111,6 @@ function Footer() {
                 className="text-sm text-stone-400 transition-colors hover:text-amber-400"
               >
                 pazurihomeskenya@gmail.com
-
               </a>
 
               <p className="text-sm text-stone-400">
@@ -98,10 +119,12 @@ function Footer() {
 
             </div>
           </div>
+
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+
+        {/* ================= BOTTOM ================= */}
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
 
           <p className="text-sm text-stone-500">
             © {new Date().getFullYear()} Pazuri Homes. All rights reserved.

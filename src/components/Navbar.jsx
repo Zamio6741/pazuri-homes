@@ -2,6 +2,8 @@ import { useState } from "react"
 import { NavLink, Link } from "react-router-dom"
 import { Menu, X, Phone } from "lucide-react"
 
+import logo from "../assets/logo/pazuri-logo.png"
+
 const navLinks = [
   { name: "Home", to: "/" },
   { name: "Services", to: "/services" },
@@ -19,28 +21,26 @@ function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-stone-950/95 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
 
-        {/* Logo */}
+        {/* ================= LOGO ================= */}
+
         <Link
           to="/"
           onClick={closeMenu}
-          className="flex items-center gap-3"
+          aria-label="Pazuri Homes"
+          className="flex items-center"
         >
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-amber-600 text-lg font-bold text-white">
-            P
-          </div>
-
-          <div>
-            <p className="text-lg font-bold tracking-wide text-white">
-              PAZURI
-            </p>
-
-            <p className="-mt-1 text-[10px] uppercase tracking-[0.3em] text-amber-500">
-              Homes
-            </p>
+          <div className="flex h-36 w-36 shrink-0 items-center justify-center">
+            <img
+              src={logo}
+              alt="Pazuri Homes"
+              className="h-full w-full scale-110 object-contain drop-shadow-2xl"
+            />
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
+
+        {/* ================= DESKTOP NAVIGATION ================= */}
+
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <NavLink
@@ -59,7 +59,9 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
+
+        {/* ================= DESKTOP CTA ================= */}
+
         <Link
           to="/contact"
           className="hidden items-center gap-2 rounded-full bg-amber-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-amber-500 md:flex"
@@ -68,7 +70,9 @@ function Navbar() {
           Get a Quote
         </Link>
 
-        {/* Mobile Menu Button */}
+
+        {/* ================= MOBILE MENU BUTTON ================= */}
+
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -80,10 +84,13 @@ function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
+
+      {/* ================= MOBILE NAVIGATION ================= */}
+
       {menuOpen && (
         <div className="border-t border-white/10 bg-stone-950 px-5 py-5 md:hidden">
           <div className="flex flex-col gap-5">
+
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -109,6 +116,7 @@ function Navbar() {
               <Phone size={16} />
               Get a Quote
             </Link>
+
           </div>
         </div>
       )}
