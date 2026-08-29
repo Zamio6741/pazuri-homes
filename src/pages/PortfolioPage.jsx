@@ -13,7 +13,6 @@ const categories = [
     subcategories: [
       "Sofa Sets",
       "TV Units",
-      "TV Cabinets",
       "Coffee Tables",
       "Console Tables",
       "Side Tables",
@@ -99,7 +98,6 @@ function PortfolioPage() {
   return (
     <section className="bg-stone-50 px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-7xl">
-
         {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -181,7 +179,6 @@ function PortfolioPage() {
 
                 {/* ================= CATEGORY CONTENT ================= */}
                 <div className="p-6 sm:p-7">
-
                   <div className="flex items-start justify-between gap-4">
                     <h2 className="text-2xl font-semibold text-stone-900">
                       {category.name}
@@ -260,7 +257,6 @@ function PortfolioPage() {
             <ArrowRight size={18} />
           </Link>
         </motion.div>
-
       </div>
     </section>
   )
